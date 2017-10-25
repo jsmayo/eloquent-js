@@ -32,7 +32,7 @@ for(var i = "#"; i.length < 8; i += "#")
   console.log(i);
 
 /* 
-“Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a “#” character. The characters should form a chess board.
+“Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a “#” character. The characters should form a chess grid.
 
 Passing this string to console.log should show something like this:
 
@@ -48,9 +48,18 @@ When you have a program that generates this pattern, define a variable size = 8 
 
 Excerpt From: Marijn Haverbeke. “Eloquent JavaScript.” iBooks. 
 */
-var size = Number(prompt("What size grid would you prefer?", "8"));
+var size = 8;
+
 var grid = "";
 
+for (var y = 0; y < size; y++) {
+  for (var x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0)
+      grid += " ";
+    else
+      grid += "#";
   }
-  console.log(grid);
+  grid += "\n";
 }
+
+console.log(grid);
